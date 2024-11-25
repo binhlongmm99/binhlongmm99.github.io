@@ -1,12 +1,8 @@
-Made this as a birthday present for my girlfriend during lockdown. Small attempt for virtual party.
+Made this as a farewell gift for a special friend over long distance.
 
-Sample screenshot of the application .
-![GitHub Logo](/images/screenshots/sample.jpg)
-
-URL: http://suryakant261.github.io/
+URL: http://binhlongmm99.github.io/
 
 Technology Used: Javascript, CSS3, HTML5
-
 
 ## Open Normally through browser
 Open index.html in browser and navigate
