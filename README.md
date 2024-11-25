@@ -1,6 +1,6 @@
 Made this as a farewell gift for a special friend over long distance.
 
-URL: http://binhlongmm99.github.io/
+URL: https://binhlongmm99.github.io/
 
 Technology Used: Javascript, CSS3, HTML5
 
