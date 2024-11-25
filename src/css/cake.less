@@ -12,8 +12,8 @@
 .cake {
   position: absolute;
   display: none;
-  // top:30%; 
-  left: 50%;
+  top:0%; 
+  left: 0%;
   margin-left: -(@D/2);
   width: @D;
   height: @D;
@@ -23,13 +23,14 @@
 */
 
 .cake:after {
-  background: rgba(255, 255, 255, 1);
-  border-radius: @D;
+  // background: rgba(255, 255, 255, 1);
+  background: #FFDAB9;
+  border-radius: @D/8;
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: @D;
+  left: 50%;
+  width: @D/100;
   height: @D/50;
 }
 
@@ -42,8 +43,8 @@
   background: rgba(255, 255, 255, 1);
   border-radius: 100%;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 80%;
+  left: 0%;
   margin-left: -(@D/2)/20;
   margin-top: -(@D/2)/6;
   width: @D/20;

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Let Go, but Not Forget</title>
+    <meta name="description" content="To Let Go, but Not Forget">
+    <link rel="icon" href="../../images/others/favicon.ico" type="image/x-icon" />
+    <meta property="og:description" content="To Let Go, but Not Forget">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #f3e5f5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #673ab7;
+            font-size: 24px;
+        }
+        p {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .button {
+            padding: 15px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 45%;
+            color: white;
+        }
+        .button:hover {
+            transform: scale(1.05);
+        }
+        .heal-button {
+            background: #4caf50;
+        }
+        .heal-button:hover {
+            background: #388e3c;
+        }
+        .stop-button {
+            background: #f44336;
+        }
+        .stop-button:hover {
+            background: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Phần này tùy tâm thôi nhé :)) </h1>
+        <p> 30/10 - "Ngày Quốc tế tỏ tình. 1 là thành đôi 2 là đành thôi" (TikTok). </p>
+        <p> Kỳ lạ thay, mỗi lần có chuyện gì với cậu, đều vô tình trùng với một ngày đặc biệt nào đó (ít nhất là với tớ).
+            Đang cố  tập quên dần cậu rồi, mà sao thấy khó ghê... &#x1F979; <br>
+        </p>
+        <p> 
+            My heart feels heavy, but I know that moving forward begins with understanding your feelings. <br>
+            Please choose what feels right to you. 
+        </p>
+        <div class="button-container">
+            <button class="button heal-button" onclick="goToPage('heal')">
+                Heal the pieces of My Broken Heart
+            </button>
+            <button class="button stop-button" onclick="goToPage('stop')">
+                Let’s Stop Here!
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function goToPage(choice) {
+            if (choice === 'heal') {
+                window.location.href = 'password.html'; // Redirect to healing page
+            } else if (choice === 'stop') {
+                window.location.href = '../../index.html'; // Redirect to stopping page
+            }
+        }
+    </script>
+</body>
+</html>
