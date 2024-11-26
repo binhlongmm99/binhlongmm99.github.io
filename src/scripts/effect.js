@@ -134,7 +134,7 @@ $('document').ready(function () {
 	});
 
 	$('#cake_fadein').click(function () {
-		console.log('cake_fadein clicked');
+		// console.log('cake_fadein clicked');
 
 		$('#cake_pink').css("display", "block");
 		$('#candle').css("display", "block");
@@ -148,7 +148,7 @@ $('document').ready(function () {
 	});
 
 	$('#light_candle').click(function () {
-		console.log('light_candle clicked');
+		// console.log('light_candle clicked');
 
 		$('.fuego').fadeIn('slow');
 		$(this).fadeOut('slow').promise().done(function () {
