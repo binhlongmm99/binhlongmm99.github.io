@@ -201,7 +201,7 @@ $('document').ready(function () {
 	});
 
 	$('#story').click(function () {
-		$(this).fadeOut('slow');
+		// $(this).fadeOut('slow');
 		$('#card').css("display", "block");
 		$('#card').show();
 		$('#card').css('position', 'absolute');
