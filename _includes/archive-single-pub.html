@@ -1,0 +1,70 @@
+{% include base_path %}
+
+{% if post.teaser %}
+  {% assign teaser = post.teaser %}
+{% elsif post.header.teaser %}
+  {% assign teaser = post.header.teaser %}
+{% else %}
+  {% assign teaser = nil %}
+{% endif %}
+
+{% if post.paperurl %}
+  {% assign title_link = post.paperurl %}
+{% else %}
+  {% assign title_link = base_path | append: post.url %}
+{% endif %}
+
+{% if post.category == "manuscripts" %}
+  {% assign pub_filter_category = "journal" %}
+{% elsif post.category == "conferences" %}
+  {% assign pub_filter_category = "conference" %}
+{% else %}
+  {% assign pub_filter_category = post.category %}
+{% endif %}
+
+<article
+  class="pub-item"
+  itemscope
+  itemtype="http://schema.org/ScholarlyArticle"
+  data-category="{{ pub_filter_category }}"
+  data-selected="{% if post.selected %}true{% else %}false{% endif %}"
+>
+  <div class="pub-thumb">
+    {% if post.badge %}
+      <span class="pub-badge">{{ post.badge }}</span>
+    {% endif %}
+    {% if teaser %}
+      <img
+        src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}"
+        alt="{{ post.title | escape }}"
+        loading="lazy"
+      />
+    {% else %}
+      <div class="pub-thumb-placeholder">Figure coming soon</div>
+    {% endif %}
+  </div>
+
+  <div class="pub-body">
+    <h3 class="pub-title" itemprop="headline">
+      <a href="{{ title_link }}" {% if post.paperurl %}target="_blank" rel="noopener"{% endif %}>{{ post.title }}</a>{% if post.highlight %} <span class="pub-highlight">({{ post.highlight }})</span>{% endif %}
+    </h3>
+
+    {% if post.authors %}
+      <p class="pub-authors" itemprop="author">{{ post.authors | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+    {% endif %}
+
+    {% if post.venue_full %}
+      <p class="pub-venue" itemprop="isPartOf">{{ post.venue_full }}</p>
+    {% elsif post.venue %}
+      <p class="pub-venue" itemprop="isPartOf">{{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}</p>
+    {% endif %}
+
+    <p class="pub-links">
+      {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank" rel="noopener">[Paper]</a>{% endif %}
+      {% if post.codeurl %}<a href="{{ post.codeurl }}" target="_blank" rel="noopener">[Code]</a>{% endif %}
+      {% if post.projecturl %}<a href="{{ post.projecturl }}" target="_blank" rel="noopener">[Project]</a>{% endif %}
+      {% if post.slidesurl %}<a href="{{ post.slidesurl }}" target="_blank" rel="noopener">[Slides]</a>{% endif %}
+      {% if post.bibtexurl %}<a href="{{ post.bibtexurl }}" target="_blank" rel="noopener">[BibTeX]</a>{% endif %}
+    </p>
+  </div>
+</article>

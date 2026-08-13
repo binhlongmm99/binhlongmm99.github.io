@@ -1,0 +1,63 @@
+{% include base_path %}
+
+{% if post.collection == 'teaching' %}
+  {% if post.courseurl %}
+    {% assign title_link = post.courseurl %}
+  {% elsif post.githuburl %}
+    {% assign title_link = post.githuburl %}
+  {% else %}
+    {% assign title_link = base_path | append: post.url %}
+  {% endif %}
+{% else %}
+  {% if post.paperurl %}
+    {% assign title_link = post.paperurl %}
+  {% else %}
+    {% assign title_link = base_path | append: post.url %}
+  {% endif %}
+{% endif %}
+
+<article class="cv-compact-item">
+  {% if post.badge %}
+    {% assign badge_parts = post.badge | split: " " %}
+    {% assign badge_last = badge_parts | last %}
+    {% assign badge_year = badge_last | plus: 0 %}
+    {% if badge_last.size == 4 and badge_year >= 1900 %}
+      {% assign badge_label = "" %}
+      {% for part in badge_parts %}
+        {% unless forloop.last %}
+          {% if badge_label != "" %}
+            {% assign badge_label = badge_label | append: " " %}
+          {% endif %}
+          {% assign badge_label = badge_label | append: part %}
+        {% endunless %}
+      {% endfor %}
+    {% else %}
+      {% assign badge_label = post.badge %}
+    {% endif %}
+    <span class="cv-compact-badge">{{ badge_label }}</span>
+  {% endif %}
+  <div class="cv-compact-body">
+    <h3 class="cv-compact-title">
+      <a href="{{ title_link }}" {% if post.paperurl or post.courseurl or post.githuburl %}target="_blank" rel="noopener"{% endif %}>{{ post.title }}</a>
+    </h3>
+
+    {% if post.collection == 'teaching' %}
+      <p class="cv-compact-meta">
+        {% if post.type %}{{ post.type }}{% endif %}{% if post.type and post.term %} · {% endif %}{% if post.term %}{{ post.term }}{% endif %}{% if post.venue %} · {{ post.venue }}{% endif %}
+      </p>
+      <p class="cv-compact-links">
+        {% if post.courseurl %}<a href="{{ post.courseurl }}" target="_blank" rel="noopener">[Course]</a>{% endif %}
+        {% if post.githuburl %}<a href="{{ post.githuburl }}" target="_blank" rel="noopener">[GitHub]</a>{% endif %}
+      </p>
+    {% else %}
+      <p class="cv-compact-meta">
+        {% if post.venue_full %}{{ post.venue_full }}{% elsif post.venue %}{{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}{% endif %}
+      </p>
+      <p class="cv-compact-links">
+        {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank" rel="noopener">[Paper]</a>{% endif %}
+        {% if post.codeurl %}<a href="{{ post.codeurl }}" target="_blank" rel="noopener">[Code]</a>{% endif %}
+        {% if post.projecturl %}<a href="{{ post.projecturl }}" target="_blank" rel="noopener">[Project]</a>{% endif %}
+      </p>
+    {% endif %}
+  </div>
+</article>

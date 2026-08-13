@@ -5,32 +5,68 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+<link rel="stylesheet" href="{{ base_path }}/assets/css/publications.css">
+
+{% if site.author.googlescholar %}
+  <p class="wordwrap">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
 {% endif %}
 
+{% assign all_pubs = site.publications | sort: "date" | reverse %}
+{% assign journal_pubs = all_pubs | where: "category", "manuscripts" %}
+{% assign conference_pubs = all_pubs | where: "category", "conferences" %}
+{% assign selected_pubs = all_pubs | where: "selected", true %}
 
+<nav class="pub-tabs" aria-label="Filter publications" data-pub-tabs>
+  <button type="button" class="pub-tab is-active" data-filter="all">
+    All <span class="pub-tab-count">{{ all_pubs.size }}</span>
+  </button>
+  <button type="button" class="pub-tab" data-filter="journal">
+    Journal <span class="pub-tab-count">{{ journal_pubs.size }}</span>
+  </button>
+  <button type="button" class="pub-tab" data-filter="conference">
+    Conference <span class="pub-tab-count">{{ conference_pubs.size }}</span>
+  </button>
+  <button type="button" class="pub-tab" data-filter="selected">
+    Selected <span class="pub-tab-count">{{ selected_pubs.size }}</span>
+  </button>
+</nav>
 
+<div class="pub-list" data-pub-list>
+  {% for post in all_pubs %}
+    {% include archive-single-pub.html %}
+  {% endfor %}
+</div>
+
+<script>
+(function () {
+  var tabs = document.querySelector('[data-pub-tabs]');
+  var list = document.querySelector('[data-pub-list]');
+  if (!tabs || !list) return;
+
+  var buttons = tabs.querySelectorAll('.pub-tab');
+  var items = list.querySelectorAll('.pub-item');
+
+  function applyFilter(filter) {
+    items.forEach(function (item) {
+      var category = item.getAttribute('data-category');
+      var selected = item.getAttribute('data-selected') === 'true';
+      var show =
+        filter === 'all' ||
+        (filter === 'journal' && category === 'journal') ||
+        (filter === 'conference' && category === 'conference') ||
+        (filter === 'selected' && selected);
+      item.hidden = !show;
+    });
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      buttons.forEach(function (b) { b.classList.remove('is-active'); });
+      button.classList.add('is-active');
+      applyFilter(button.getAttribute('data-filter'));
+    });
+  });
+})();
+</script>

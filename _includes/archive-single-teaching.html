@@ -1,0 +1,58 @@
+{% include base_path %}
+
+{% if post.teaser %}
+  {% assign teaser = post.teaser %}
+{% elsif post.header.teaser %}
+  {% assign teaser = post.header.teaser %}
+{% else %}
+  {% assign teaser = nil %}
+{% endif %}
+
+{% if post.courseurl %}
+  {% assign title_link = post.courseurl %}
+{% elsif post.githuburl %}
+  {% assign title_link = post.githuburl %}
+{% else %}
+  {% assign title_link = base_path | append: post.url %}
+{% endif %}
+
+<article class="pub-item" itemscope itemtype="http://schema.org/Course">
+  <div class="pub-thumb">
+    {% if post.badge %}
+      <span class="pub-badge">{{ post.badge }}</span>
+    {% endif %}
+    {% if teaser %}
+      <img
+        src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}"
+        alt="{{ post.title | escape }}"
+        loading="lazy"
+      />
+    {% else %}
+      <div class="pub-thumb-placeholder">Figure coming soon</div>
+    {% endif %}
+  </div>
+
+  <div class="pub-body">
+    <h3 class="pub-title" itemprop="name">
+      <a href="{{ title_link }}" {% if post.courseurl or post.githuburl %}target="_blank" rel="noopener"{% endif %}>{{ post.title }}</a>
+    </h3>
+
+    {% if post.type %}
+      <p class="pub-authors">{{ post.type }}{% if post.term %} · {{ post.term }}{% endif %}</p>
+    {% elsif post.term %}
+      <p class="pub-authors">{{ post.term }}</p>
+    {% endif %}
+
+    {% if post.venue_full %}
+      <p class="pub-venue">{{ post.venue_full }}</p>
+    {% elsif post.venue %}
+      <p class="pub-venue">{{ post.venue }}{% if post.location %}, {{ post.location }}{% endif %}</p>
+    {% endif %}
+
+    <p class="pub-links">
+      {% if post.courseurl %}<a href="{{ post.courseurl }}" target="_blank" rel="noopener">[Course]</a>{% endif %}
+      {% if post.githuburl %}<a href="{{ post.githuburl }}" target="_blank" rel="noopener">[GitHub]</a>{% endif %}
+      {% if post.slidesurl %}<a href="{{ post.slidesurl }}" target="_blank" rel="noopener">[Slides]</a>{% endif %}
+    </p>
+  </div>
+</article>

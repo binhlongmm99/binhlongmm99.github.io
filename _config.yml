@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Long Nguyen Binh/ MSc."
+title                    : "Binh Long Nguyen"
 title_separator          : "-"
 name                     : &name "Long Nguyen"
 description              : &description "PhD Candidate at the Queensland University of Technology"
@@ -22,8 +22,8 @@ repository               : "binhlongmm99/binhlongmm99.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Long Nguyen (Lobito)"
+  avatar           : "profile.jpg"
+  name             : "Binh-Long Nguyen"
   pronouns         : # example: "she/her"  
   bio              : "PhD Candidate"
   location         : "Brisbane, QLD, Australia"

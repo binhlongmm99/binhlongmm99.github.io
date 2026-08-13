@@ -7,6 +7,11 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<link rel="stylesheet" href="{{ base_path }}/assets/css/publications.css">
+
+<div class="pub-list">
+  {% assign courses = site.teaching | sort: "date" | reverse %}
+  {% for post in courses %}
+    {% include archive-single-teaching.html %}
+  {% endfor %}
+</div>
