@@ -68,7 +68,7 @@ redirect_from:
 
   <h3 class="cv-subsection-title">Industry Experience</h3>
 
-  <div class="cv-job">
+  <!-- <div class="cv-job">
     <div class="cv-job-header">
       <p class="cv-job-role">Computer Vision Intern</p>
       <span class="cv-job-date">Mar 2023 – May 2023</span>
@@ -79,7 +79,7 @@ redirect_from:
       <li>Fine-tuned CLIP models for traffic participant and vehicle attribute recognition.</li>
       <li>Evaluated Segment Anything (SAM) for traffic scene segmentation.</li>
     </ul>
-  </div>
+  </div> -->
 
   <div class="cv-job">
     <div class="cv-job-header">

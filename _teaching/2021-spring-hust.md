@@ -6,7 +6,7 @@ term: "Spring 2021"
 permalink: /teaching/2021-spring-hust
 venue: "Hanoi University of Science and Technology (HUST)"
 venue_full: "Hanoi University of Science and Technology (HUST), Hanoi, Vietnam"
-badge: "HUST 2021"
+badge: "HUST"
 date: 2021-01-01
 location: "Hanoi, Vietnam"
 teaser: "teaching/hust.jpg"
