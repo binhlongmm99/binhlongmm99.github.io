@@ -34,24 +34,23 @@ Prior to this, I earned my Master’s degree in Computer Science and my Bachelor
 🏆 Honors and Awards
 ======
 - *2024 - 2027*: QUT-CSIRO Cooperative PhD Scholarship
-- *2021 - 2023*: Scholarship for Master's Training in Vietnam - [Vingroup Innovation Foundation](https://vinif.org/en/) (VinIF)
-- *2021*: First-Class Honours (Top 1%), Bachelor of Information Technology - Hanoi University of Science and Technology 
-- *2020*: **Second Prize**, Scientific Research Student Award - Vietnamese Ministry of Education and Training
-- *2020*: **First Prize**, Scientific Research Student Award - Hanoi University of Science and Technology
-- *2014 - 2017*: Honours Scholarship (3 Academic Years) — Hanoi–Amsterdam High School for the Gifted
+- *2021 - 2023*: Scholarship for Master's Training in Vietnam — [Vingroup Innovation Foundation](https://vinif.org/en/) (VinIF)
+- *2021*: First-Class Honours (Top 1%), Bachelor of Information Technology — Hanoi University of Science and Technology 
+- *2020*: **Second Prize**, Scientific Research Student Award — Vietnamese Ministry of Education and Training
+- *2020*: **First Prize**, Scientific Research Student Award — Hanoi University of Science and Technology
+- *2014 - 2017*: Honours Scholarship (3 Academic Years) — Hanoi-Amsterdam High School for the Gifted
 
 
 🎓 Educations
 ======
-- *2024 - now*: PhD Candidate - Queensland University of Technology
+- *2024 - now*: PhD Candidate, Queensland University of Technology
 - *2021 - 2023*: Master of Computer Science, Hanoi University of Science and Technology
 - *2017 - 2021*: Bachelor of Information Technology (Honours), Hanoi University of Science and Technology
 - *2014 - 2017*: Mathematics Specialized Class, Hanoi Amsterdam High School for the Gifted
 
 
-💁 Academic Service
+💁 Academic Services
 ======
-Reviewer for : 
-- Journals: IEEE Transactions on Evolutionary Computation; Evolutionary Intelligence; Thin-Walled Structures; Archives of Computational Methods in Engineering
+- Journal Reviewer: IEEE Transactions on Evolutionary Computation; Evolutionary Intelligence; Thin-Walled Structures; Archives of Computational Methods in Engineering
 <!-- - Conference: AAAI, SOICT -->
 
